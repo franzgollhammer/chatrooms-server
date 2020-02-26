@@ -2,6 +2,12 @@ const express = require('express');
 const router = express.Router();
 const { checkUserExists } = require('./userHelper');
 
+router.get('/', (req, res) => {
+    res.send({
+        message: 'Hello from the chatrooms server 🌎'
+    })
+})
+
 router.get('/:chatroom/:username', (req, res) => {
     const userData = {
         chatroom: req.params.chatroom,
